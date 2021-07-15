@@ -98,7 +98,7 @@ app.layout = html.Div(children=[ html.H1('US Domestic Airline Flights Performanc
                                                         style={'width':'80%', 'padding':'3px', 'font-size':'20px','textAlign':'center'}),
 
                                     # Place them next to each other using the division style
-                                    ], style={'display':'flex'})
+                                    ], style={'display':'flex'}),
                                     
                                    # Add next division 
                                    html.Div([
@@ -184,7 +184,7 @@ def get_graph(chart, year, children1, children2, c3, c4, c5):
             
             # TASK6: Number of flights flying to each state from each reporting airline
             # Enter your code below. Make sure you have correct formatting.
-            tree_fig = px.tree_fig(tree_data, path=['DestState', 'Reporting_Airline'], 
+            tree_fig = px.treemap(tree_data, path=['DestState', 'Reporting_Airline'], 
                       values='Flights',
                       color='Flights',
                       color_continuous_scale='RdBu',
